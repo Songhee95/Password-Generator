@@ -19,34 +19,36 @@ function generatePassword(){
   // if input pwd length is between 8 and 129
   if(password>=8 && password<=129){
     var numberInclude = confirm("Click OK to confirm including numeric characters");
+    // if user choose numberCharacter, update array of total characters
     if(numberInclude===true){
       totalCharacters += numberCharacters;
     }else{
       this.totalCharacters;
     }
-
+    // if user choose lowercase character, update array of total characters 
     var lowerCaseInclude = confirm("Click OK to confirm including lowercase characters");
     if(lowerCaseInclude===true){
       totalCharacters += lowerCase;
     }else{
       totalCharacters;
     }
-
+    // if user choose uppercase character, update array of total characters
     var upperCaseInclude = confirm("Click OK to confirm including uppercase characters");
     if(upperCaseInclude===true){
       totalCharacters += upperCase;
     }else{
       totalCharacters;
     }
-
+    // if user choose special character, update array of total characters 
     var specialInclude = confirm("Click OK to confirm including special characters");
     if(specialInclude===true){
       totalCharacters += specialCharacters;
     }else{
       totalCharacters;
     }
-
+    
     var ranPick = [];
+    // pick random characters in array of total characters which is made by user
     for(i=0; i<this.password; i++){
       var numPick = Math.floor(Math.random()*(totalCharacters.length));
       ranPick += totalCharacters[numPick];
